@@ -1,25 +1,24 @@
 <template lang="html">
-  <li class="content-item" v-if="item.type === 'full'">
-    <div class="content-item-{{item.type}}">
-      <div class="thumb">
-        <img src="{{item.thumb}}" alt="" />
+    <li class="content-item" v-if="item.type === 'full'" @click="goToDetailPage(item.id)">
+      <div class="content-item-{{item.type}}">
+        <div class="thumb">
+          <img src="{{item.thumb}}" alt="" />
+        </div>
+        <h2>{{item.title}}</h2>
+        <p>{{item.desc}}</p>
       </div>
-      <h2>{{item.title}}</h2>
-      <p>{{item.desc}}</p>
-    </div>
-  </li>
-  <li class="content-item" v-if="item.type === 'photo'">
-    <div class="content-item-{{item.type}}">
-      <h2>{{item.title}}</h2>
-      <div class="thumb">
-        <img src="{{item.thumb}}" alt="" />
+    </li>
+    <li class="content-item" v-if="item.type === 'photo'" @click="goToDetailPage(item.id)">
+      <div class="content-item-{{item.type}}">
+        <h2>{{item.title}}</h2>
+        <div class="thumb">
+          <img src="{{item.thumb}}" alt="" />
+        </div>
+        <p>{{item.desc}}<span class="count icon-comments">
+          333
+        </span></p>
       </div>
-      <p>{{item.desc}}<span class="count icon-hand-right">
-        333
-      </span></p>
-
-    </div>
-  </li>
+    </li>
 </template>
 
 <script>
@@ -31,7 +30,16 @@ export default {
   computed: {},
   ready: function () {},
   attached: function () {},
-  methods: {},
+  methods: {
+    goToDetailPage(id){
+      this.$route.router.go({
+        name:'detail',
+        params:{
+          id:id
+        }
+      })
+    }
+  },
   components: {},
   props:{
     item:Object

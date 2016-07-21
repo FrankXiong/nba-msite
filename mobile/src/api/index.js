@@ -11,5 +11,8 @@ export default {
   },
   getScrollImgList:(params)=>{
     return Resource.get(BASE_URL+'scrollimg.json')
+  },
+  getArticleInfo:(params)=>{
+    return Resource.get(BASE_URL+'article.json')
   }
 }

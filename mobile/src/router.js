@@ -5,9 +5,11 @@ import DetailPage from './pages/detail.vue'
 export default function (router) {
   router.map({
     '/':{
+      name:'home',
       component:App
     },
     '/:id':{
+      name:'detail',
       component:DetailPage
     },
     '*':{
