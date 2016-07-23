@@ -1,8 +1,9 @@
 <template lang="html">
-    <li class="content-item" v-if="item.type === 'full'" @click="goToDetailPage(item.id)">
+  <div class="">
+    <li v-click="{path:'/',params:{name:item.id}}" class="content-item" v-if="item.type === 'full'">
       <div class="content-item-{{item.type}}">
         <div class="thumb">
-          <img src="{{item.thumb}}" alt="" />
+          <img v-bind:src="item.thumb" alt="" />
         </div>
         <h2>{{item.title}}</h2>
         <p>{{item.desc}}</p>
@@ -12,13 +13,14 @@
       <div class="content-item-{{item.type}}">
         <h2>{{item.title}}</h2>
         <div class="thumb">
-          <img src="{{item.thumb}}" alt="" />
+          <img v-bind:src="item.thumb" alt="" />
         </div>
         <p>{{item.desc}}<span class="count icon-comments">
           333
         </span></p>
       </div>
     </li>
+  </div>
 </template>
 
 <script>
@@ -47,7 +49,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../assets/style/variables.scss";
 @import "../assets/style/mixin.scss";
 @import "../assets/style/font-awesome.css";

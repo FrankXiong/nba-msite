@@ -1,0 +1,22 @@
+{
+  "name": "nba-msite",
+  "version": "1.0.0",
+  "description": "腾讯NBA移动端网站克隆版",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrankXiong/nba-msite.git"
+  },
+  "keywords": [
+    "nba"
+  ],
+  "author": "xianren xiong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FrankXiong/nba-msite/issues"
+  },
+  "homepage": "https://github.com/FrankXiong/nba-msite#readme"
+}
