@@ -1,7 +1,7 @@
 <template lang="html">
   <header>
       <h1 class="logo">
-        <a href=""><img src="../assets/img/logo.png" alt="logo"/></a>
+        <a v-link="{name:'home'}"><img src="../assets/img/logo.png" alt="logo"/></a>
         <span class="gochannels"></span>
       </h1>
   </header>
@@ -21,8 +21,19 @@ export default {
 }
 </script>
 
-<style language="scss">
+<style language="sass" scoped>
   header{
-      background:url('../assets/img/headerbg.png') no-repeat;
+    background:url('../assets/img/headerbg.png') 139px top no-repeat;
+    background-size: 141px 44px;
   }
+  .logo{
+    padding: .5rem;
+    margin: 0;
+  }
+  img{
+    display: inline-block;
+    width: 120px;
+    height: 30px;
+  }
+
 </style>

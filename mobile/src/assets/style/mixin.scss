@@ -3,3 +3,10 @@
   overflow: hidden;
   white-space: nowrap;
 }
+@mixin fixBannerSize {
+  padding-top: 54%;
+  width: 100%;
+  height: 0;
+  margin: 0 auto;
+  background-size: cover;
+}

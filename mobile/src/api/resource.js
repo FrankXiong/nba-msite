@@ -10,8 +10,15 @@ Vue.http.interceptors.push({
   },
   response(res){
     const data = res.data
-    // do something...
-    return data;
+    if(data.code == 200){
+      console.log(data.msg);
+      return data.data;
+    }else{
+      return {
+        "ok":false,
+        "msg":"error"
+      }
+    }
   }
 })
 

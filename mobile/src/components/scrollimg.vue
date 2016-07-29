@@ -1,9 +1,7 @@
 <template lang="html">
   <mt-swipe :auto="4000" :show-indicators="true">
-    <mt-swipe-item class="slide1"><img src="http://inews.gtimg.com/newsapp_ls/0/424717531_640330/0" alt="" /></mt-swipe-item>
-    <mt-swipe-item class="slide2"><img src="http://inews.gtimg.com/newsapp_ls/0/424875505_640330/0" alt="" /></mt-swipe-item>
-    <mt-swipe-item class="slide3">
-      <img src="http://inews.gtimg.com/newsapp_ls/0/425566994_640330/0" alt="" />
+    <mt-swipe-item class="slide-item" v-for="item in imgs">
+      <img src="{{item.url}}" alt="" />
     </mt-swipe-item>
   </mt-swipe>
 </template>
@@ -13,12 +11,14 @@ import { Swipe, SwipeItem } from 'mint-ui';
 export default {
   data: function () {
     return {
+      imgs:[
+        {url:"http://inews.gtimg.com/newsapp_ls/0/447540273_640330/0"},
+        {url:"http://inews.gtimg.com/newsapp_ls/0/447540273_640330/0"},
+        {url:"http://inews.gtimg.com/newsapp_ls/0/447540273_640330/0"}
+      ]
     }
   },
   computed: {},
-  ready: function () {
-    console.log(Swipe);
-  },
   attached: function () {},
   methods: {},
   components: {

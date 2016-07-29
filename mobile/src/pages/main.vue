@@ -1,26 +1,44 @@
 <template lang="html">
-  <Navbar></Navbar>
-  <ScrollImg></ScrollImg>
+  <div class="container">
+    <gallery></gallery>
+    <ul class="content-list">
+      <item class="" v-for="item in articleList"
+        :item="item"
+      ></item>
+    </ul>
+  </div>
 </template>
 
 <script type="text/ecmascript-6">
-import ScrollImg from '../components/scrollimg'
-import Navbar from '../components/nav'
-
+import Item from '../components/item.vue'
+import Gallery from '../components/scrollimg.vue'
+import ajax from '../api/index'
 export default {
   data: function () {
     return {
+      articleList:[]
     }
   },
-  computed: {},
-  ready: function () {},
-  attached: function () {},
-  methods: {},
+  created() {
+    this.loadData()
+  },
+  methods: {
+      loadData(){
+        ajax.getArticleList().then((res) => {
+          this.articleList = res.datas
+        },(res) => {
+          this.articleList = res.datas
+        }).finally(() => {
+          console.log('load ended');
+        })
+      }
+  },
   components: {
-    ScrollImg,Navbar
+    Gallery,Item
   }
 }
 </script>
 
-<style lang="sass">
+<style lang="scss">
+  @import "../assets/style/reset.scss";
 </style>

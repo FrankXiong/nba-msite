@@ -1,9 +1,9 @@
 <template lang="html">
-  <div class="">
-    <li v-click="{path:'/',params:{name:item.id}}" class="content-item" v-if="item.type === 'full'">
+  <div>
+    <li class="content-item" v-if="item.type === 'full'" @click="goToDetailPage(item.id)">
       <div class="content-item-{{item.type}}">
         <div class="thumb">
-          <img v-bind:src="item.thumb" alt="" />
+          <img src="{{item.thumb}}" alt="" />
         </div>
         <h2>{{item.title}}</h2>
         <p>{{item.desc}}</p>
@@ -12,9 +12,7 @@
     <li class="content-item" v-if="item.type === 'photo'" @click="goToDetailPage(item.id)">
       <div class="content-item-{{item.type}}">
         <h2>{{item.title}}</h2>
-        <div class="thumb">
-          <img v-bind:src="item.thumb" alt="" />
-        </div>
+        <div class="thumb" v-bind:style="imgStyle"></div>
         <p>{{item.desc}}<span class="count icon-comments">
           333
         </span></p>
@@ -23,13 +21,19 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
 export default {
   data: function () {
     return {
     }
   },
-  computed: {},
+  computed: {
+    imgStyle(){
+      return {
+        backgroundImage:'url('+this.item.thumb+')'
+      }
+    }
+  },
   ready: function () {},
   attached: function () {},
   methods: {
@@ -54,7 +58,7 @@ export default {
 @import "../assets/style/mixin.scss";
 @import "../assets/style/font-awesome.css";
 .content-item{
-  padding: 1rem;
+  padding:10px;
   border-bottom: 1px solid $lightGrey;
   .content-item-photo{
     h2{
@@ -64,12 +68,7 @@ export default {
       @include textOverflow;
     }
     .thumb{
-      width: 100%;
-      text-align: center;
-      background: #e9f1f4;
-      img{
-        width: 100%;
-      }
+      @include fixBannerSize;
     }
     p{
       padding: 5px 0 0;

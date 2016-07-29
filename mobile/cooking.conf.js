@@ -10,7 +10,13 @@ cooking.set({
 
   devServer: {
     port: 8080,
-    publicPath: '/'
+    publicPath: '/',
+    hot: true,
+    // 控制台输出的信息
+    stats: 'errors-only',
+    noInfo: true,
+    quiet: false,
+    lazy: false
   },
 
   // production
