@@ -1,6 +1,6 @@
 import Resource from './resource'
 
-const BASE_URL = 'http://localhost:8080/src/data/'
+const BASE_URL = '/src/data/'
 
 export default {
   getArticleList:()=>{

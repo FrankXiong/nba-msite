@@ -6,7 +6,7 @@ cooking.set({
     app: './src/index.js'
   },
   dist: './dist',
-  template: './src/index.tpl',
+  template: './src/index.html',
 
   devServer: {
     port: 8080,
@@ -44,8 +44,8 @@ cooking.set({
       chunks: ['vendor']
     }
   ],
-  publicPath: '/dist/',
-  assetsPath: 'static',
+  publicPath: '/dist',
+  assetsPath: '/',
   urlLoaderLimit: 10000,
   extractCSS: '[name].[contenthash:7].css',
   extends: ['vue','sass']
