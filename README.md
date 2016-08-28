@@ -1,2 +1,16 @@
-# nba-msite
-腾讯NBA移动端网站克隆版
+# mobile
+> A vue project.
+
+## Development
+
+```shell
+make dev
+```
+
+## Production
+```
+make dist
+```
+
+## License
+MIT
